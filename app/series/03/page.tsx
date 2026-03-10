@@ -15,13 +15,9 @@ lineHeight: 1.7
 }}
 >
 
-<h1 style={{marginBottom:4}}>
-Series 03 — Grid Paths
+<h1 className="text-3xl sm:text-4xl font-bold">
+        Series 03 — From Manhattan distance to Pascal's Triangle
 </h1>
-
-<p style={{color:"#666",marginBottom:30}}>
-From Manhattan distance to Pascal's Triangle
-</p>
 
 
 {/* IMAGE 1 */}
@@ -207,7 +203,23 @@ So the number of shortest paths across an <b>n × n grid</b> is:
 C(2n, n)
 </p>
 
+<div style={{marginTop:40,textAlign:"center"}}>
 
+<a
+href="/series/01"
+style={{
+padding:"10px 18px",
+border:"1px solid #ddd",
+borderRadius:6,
+textDecoration:"none"
+}}
+>
+
+Back → Series 01: The Puzzle of Classification
+
+</a>
+
+</div>
 
 </main>
 

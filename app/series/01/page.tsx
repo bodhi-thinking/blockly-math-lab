@@ -306,6 +306,7 @@ export default function Series01() {
           width="100%"
           height="600"
           className="border rounded"
+          loading="lazy"
         />
 
         <p className="text-sm text-gray-500 mt-2">
@@ -334,6 +335,25 @@ export default function Series01() {
         />
 
       </section>
+
+
+      <div style={{marginTop:40,textAlign:"center"}}>
+
+<a
+href="/series/02"
+style={{
+padding:"10px 18px",
+border:"1px solid #ddd",
+borderRadius:6,
+textDecoration:"none"
+}}
+>
+
+Continue → Series 02: From Classification to Motion
+
+</a>
+
+</div>
 
     </main>
   )

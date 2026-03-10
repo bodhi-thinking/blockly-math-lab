@@ -275,6 +275,25 @@ Continue → Series 03: Grid Paths
 
 </div>
 
+
+<div style={{marginTop:40,textAlign:"center"}}>
+
+<a
+href="/series/01"
+style={{
+padding:"10px 18px",
+border:"1px solid #ddd",
+borderRadius:6,
+textDecoration:"none"
+}}
+>
+
+Back → Series 01: The Puzzle of Classification
+
+</a>
+
+</div>
+
     </main>
   )
 }
