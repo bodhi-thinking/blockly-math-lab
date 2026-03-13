@@ -24,8 +24,8 @@ export default function Series01() {
         </h2>
 
         <p>
-          Start simple. Pick any number. Now pick the next one.
-          Easy, right?
+          Counting feels like one of the simplest things we ever learn.
+          Each number naturally leads to the next. Nothing mysterious about it. If you keep going, the numbers never stop.
         </p>
 
         <p>You could do this forever.</p>
@@ -35,27 +35,18 @@ export default function Series01() {
         </div>
 
         <p>
-          You never run out of numbers.
-          You know what comes next.
-          There's a pattern.
-        </p>
-
-        <p>Now try something different.</p>
-
-        <p>
-          Write down a number between <strong>0 and 1</strong>.
+          Infinity simply means that the process of counting has no end.
+          Now try a slightly different experiment.
+          Instead of whole numbers, write down a number <strong>between 0 and 1. </strong>
         </p>
 
         <div className="bg-gray-100 p-4 rounded font-mono">
           0.5 &nbsp; 0.318 &nbsp; 0.777777...
         </div>
 
-        <p>
-          Got one? Great.
-        </p>
 
         <p>
-          Now try writing down <strong>all of them</strong>.
+          But now imagine trying to <strong>list all of them</strong>.
         </p>
 
         <p>
@@ -63,22 +54,23 @@ export default function Series01() {
         </p>
 
         <p>
-          With counting numbers you start at 1.
-          But decimals between 0 and 1?
+          With counting numbers, you start at 1.
+          But with decimals between 0 and 1?
         </p>
 
         <p>
-          Is the first one 0.1?  
-          What about 0.01?  
+          Is the first one 0.1?  <br/>
+          But then what about 0.01? <br/>
           Or 0.001?
         </p>
 
         <p>
-          You can always go smaller.
+          Every time you think you found the smallest one, you can always place another number before it.
         </p>
 
         <p>
-          There's no obvious starting point.
+          Something strange begins to happen.
+          The idea of listing all these numbers starts to feel impossible.
         </p>
 
       </section>
@@ -87,45 +79,13 @@ export default function Series01() {
       <section className="space-y-4">
 
         <p>
-          But here's the real question.
+          <strong>In the late 1800s, Georg Cantor investigated exactly this question.</strong> What he discovered surprised even him.
         </p>
 
         <p>
-          What if you tried anyway —
-          just threw every decimal into an infinitely long list?
+          <strong>The infinity of counting numbers and the infinity of decimal numbers are not the same size. </strong> <br/>
         </p>
 
-        <p>
-          Would you eventually get them all?
-        </p>
-
-        <p>
-          It turns out the answer is no.
-        </p>
-
-        <p>
-          No matter how long your list is,
-          no matter how carefully you build it,
-          there will always be a decimal number missing.
-        </p>
-
-        <p>
-          Not because you ran out of time.
-        </p>
-
-        <p>
-          Because it is <strong>mathematically impossible </strong>
-          to list them all.
-        </p>
-
-        <p>
-          A mathematician named <strong>Georg Cantor </strong>
-          discovered this in the 1800s.
-        </p>
-
-        <p>
-          Even he was surprised by his own result.
-        </p>
 
          {/* Image */}
       <div className="flex justify-center">
@@ -142,15 +102,9 @@ export default function Series01() {
       {/* Infinity Comparison */}
       <section className="space-y-4">
 
-        <p>
-          Cantor discovered that infinity isn't just one thing.
-        </p>
 
         <p>
-          There are actually <strong>different sizes of infinity</strong>.
-        </p>
-
-        <p>
+          Mathematicians use special symbols to describe this idea. <br/>
           The infinity of counting numbers:
         </p>
 
@@ -171,9 +125,10 @@ export default function Series01() {
         </p>
 
         <p className="text-center text-gray-600">
-          A smaller infinity.  
-          A larger infinity.  
-          Both infinite.
+          Both collections are infinite.
+          But one of them is larger.
+          It sounds almost absurd at first. How can infinity be bigger than infinity?
+          Yet Cantor showed that this is unavoidable.
         </p>
 
       </section>
@@ -190,8 +145,7 @@ export default function Series01() {
         </p>
 
         <p>
-          Can you create a decimal number that is guaranteed
-          not to appear anywhere on that list?
+          Can you create a decimal number that is guaranteed not to appear anywhere on that list?
         </p>
 
         <textarea
@@ -206,15 +160,35 @@ export default function Series01() {
       <section className="space-y-4">
 
         <p>
-          Cantor realised something important.
+          <br/>
+          ......<br/>
+          .....<br/>
+          ....<br/>
+          ...<br/>
+          ..<br/>
+          .<br/>
+         <br/>
+
+          Cantor had a clever trick. <br/>
+          Look at the <strong>first digit of the first number.</strong> <br/>
+          Look at the <strong>second digit of the second number.</strong> <br/>
+          Look at the <strong>third digit of the third number.</strong> <br/>
+          
+          Now <strong>change each of those digits slightly.</strong>
+          The new number you create will differ from every number in the list in at least one position.
+          So it cannot appear anywhere in the list.
         </p>
 
         <p>
-          The question wasn't really about a single number.
+          No matter how long the list is, you can always construct a new number missing from it.
+          Which means the decimals can never be fully listed.
+          That single argument changed how mathematicians think about infinity.
         </p>
 
+
         <p>
-          It was about two <strong>collections</strong>.
+          What Cantor eventually realised was that the question wasn’t really about a single number.
+          It was about two collections of numbers.
         </p>
 
         <div className="bg-gray-100 p-4 rounded font-mono">
@@ -226,20 +200,37 @@ export default function Series01() {
         </div>
 
         <p>
-          Could every number in one collection be paired
-          with exactly one number in the other?
+          Instead of asking “Can we list them?”, Cantor asked a different question.
+          Can we pair the numbers from these two collections?
+          Imagine matching them one by one
+        </p>
+
+         <div className="bg-gray-100 p-4 rounded font-mono">
+          1 → 0.13729...<br/>
+          2 → 0.50013...<br/>
+          3 → 0.33333...<br/>
+          4 → 0.92104...<br/>
+        </div>
+
+        <p>
+          If every number in the first collection could be paired with exactly one number in the second, 
+          and none were left over, then the two collections would be the same size.
         </p>
 
         <p>
-          If yes — the collections are the same size.
+          Mathematicians use a special word for any collection of objects like this.
+          They call it a <strong>set</strong>. <br/>
+          <strong> A set is simply a collection defined by a clear rule.</strong>
         </p>
 
         <p>
-          If not — one of them must be larger.
+          The set of counting numbers.<br/>
+          The set of decimal numbers between 0 and 1.<br/>
+          The set of all prime numbers.<br/>
         </p>
 
         <p>
-          Mathematicians call any collection like this a <strong>set</strong>.
+          This idea of deciding membership may feel abstract, but you already use it constantly in everyday life.
         </p>
 
       </section>
@@ -257,15 +248,9 @@ export default function Series01() {
         <p>
           When you see a duck and a bee,
           you immediately start sorting.
-        </p>
-
-        <p>
           Wings.  
           Legs.  
-          Traits.
-        </p>
-
-        <p>
+          Traits.<br/>
           You're applying a rule
           to decide which group something belongs to.
         </p>

@@ -21,7 +21,7 @@ export default function Series02() {
         </p>
 
         <p>
-          You were classifying animals.
+          You were classifying animals. The rule was simple: check a trait and decide.
         </p>
 
         <p>
@@ -33,19 +33,29 @@ export default function Series02() {
         </p>
 
         <p>
-          But underneath, both puzzles rely on the same idea:
+          Imagine standing at the entrance of a maze.
+          You want to reach the exit, but the maze only allows movement along narrow corridors. <br/>
+          At every step you must decide what to do.<br/>
+          Move forward.<br/>
+          Turn left. <br/>
+          Turn right.<br/>
+        </p>
+
+        <p>
+          Each choice changes your position inside the maze.
+          If someone asked you to guide a friend through the maze, you would probably give instructions like this:<br/>
+          Move forward three steps.<br/>
+          Turn right.<br/>
+          Move forward two steps.<br/>
+        </p>
+
+        <p>
+          Those instructions form a <strong>procedure</strong>. 
+          In mathematics and computer science, we give such procedures a special name - <strong>ALGORITHMS</strong>.
         </p>
 
         <p className="italic text-center">
-          a rule with no ambiguity.
-        </p>
-
-        <p>
-          In classification, the rule decides <strong>membership</strong>.
-        </p>
-
-        <p>
-          In the maze, the rule decides <strong>movement</strong>.
+         An <strong>algorithm</strong> is a sequence of clear instructions that solves a problem step by step.
         </p>
 
       </section>
@@ -77,7 +87,22 @@ export default function Series02() {
         </p>
 
 
-        {/* Launch Card */}
+
+        {/* Embedded Maze */}
+        <div className="w-full overflow-hidden rounded-lg border">
+
+          <iframe
+            src="https://blockly.games/maze?lang=en"
+            className="w-full h-[450px] md:h-[600px]"
+          />
+
+        </div>
+
+        <p className="text-sm text-gray-500">
+          Maze powered by Blockly Games.
+        </p>
+
+         {/* Launch Card */}
         <div className="flex flex-col items-center gap-4 p-6 border rounded-lg bg-gray-50">
 
           <a
@@ -95,22 +120,8 @@ export default function Series02() {
 
         </div>
 
-
-        {/* Embedded Maze */}
-        <div className="w-full overflow-hidden rounded-lg border">
-
-          <iframe
-            src="https://blockly.games/maze?lang=en"
-            className="w-full h-[450px] md:h-[600px]"
-          />
-
-        </div>
-
-        <p className="text-sm text-gray-500">
-          Maze powered by Blockly Games.
-        </p>
-
       </section>
+
 
 
 
@@ -231,28 +242,23 @@ export default function Series02() {
         </h2>
 
         <p className="italic text-center">
-          An algorithm is a set of instructions that solves a problem step by step.
+          An <strong>algorithm</strong> is not just a list of commands. It is a <strong>structured way of thinking</strong>.
         </p>
 
         <p>
-          The maze character followed your instructions exactly.
+          The maze puzzle may feel like a small game, but the same idea appears everywhere:<br/>
+          1. navigation systems computing routes<br/>
+          2. search engines finding information<br/>
+          3. AI systems analysing patterns<br/>
         </p>
 
         <p>
-          Traditional computers work the same way.
+          All of them ultimately rely on algorithms — carefully defined rules that transform one state into another.
         </p>
 
         <p>
-          They do not guess.  
-          They simply follow rules.
-        </p>
-
-        <p>
-          Modern AI systems are different.
-        </p>
-
-        <p>
-          They can learn patterns from data — but even they ultimately run on algorithms written by humans.
+          In the next series we will explore what happens when movement is restricted to a grid.
+          Surprisingly, <strong>simple grid movement leads to a beautiful mathematical pattern that appears in combinatorics, probability, and algebra.</strong>
         </p>
 
       </section>
@@ -288,7 +294,7 @@ textDecoration:"none"
 }}
 >
 
-Back → Series 01: The Puzzle of Classification
+Back ← Series 01: The Puzzle of Classification
 
 </a>
 
