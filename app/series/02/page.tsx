@@ -2,303 +2,210 @@ import Image from "next/image"
 
 export default function Series02() {
   return (
-    <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-12 leading-relaxed text-gray-800">
+    <main className="page">
 
-      {/* Title */}
-      <h1 className="text-3xl sm:text-4xl font-bold">
-        Series 02 — From Classification to Motion
-      </h1>
+      <span className="series-label">Series 02</span>
 
-      {/* Intro */}
-      <section className="space-y-4 max-w-2xl">
+      <h1 className="title">From Classification to Motion</h1>
 
-        <p>
-          In the previous puzzle, you answered a simple question:
-        </p>
+      {/* ── Section 1 ─────────────────────────────────────── */}
+      <section className="section">
+        <p>In the previous puzzle, you answered a simple question:</p>
 
-        <p className="font-semibold text-center">
-          Does this belong here — or not?
-        </p>
+        <p className="focus center">Does this belong here — or not?</p>
 
-        <p>
-          You were classifying animals. The rule was simple: check a trait and decide.
-        </p>
+        <p>You observed an object, noticed a trait, and applied a rule..</p>
 
-        <p>
-          The maze asks a different question:
-        </p>
+        <p>Now the situation changes. Instead of deciding where something fits, you are faced with a 
+          different kind of question — not about belonging, but about movement.</p>
 
-        <p className="font-semibold text-center">
-          How do you get from here to there?
-        </p>
+        <p className="focus center">How do you get from here to there?</p>
 
         <p>
           Imagine standing at the entrance of a maze.
-          You want to reach the exit, but the maze only allows movement along narrow corridors. <br/>
-          At every step you must decide what to do.<br/>
-          Move forward.<br/>
-          Turn left. <br/>
-          Turn right.<br/>
+          You want to reach the exit, but the maze only allows movement along narrow corridors.
+          At every step you must decide what to do.
         </p>
+
+        <div className="code">{`Move forward.
+Turn left.
+Turn right.`}</div>
 
         <p>
           Each choice changes your position inside the maze.
-          If someone asked you to guide a friend through the maze, you would probably give instructions like this:<br/>
-          Move forward three steps.<br/>
-          Turn right.<br/>
-          Move forward two steps.<br/>
+          If someone asked you to guide a friend through the maze,
+          you would probably describe the path in a sequence of steps:
         </p>
+
+        <div className="code">{`Move forward three steps.
+Turn right.
+Move forward two steps.`}</div>
 
         <p>
-          Those instructions form a <strong>procedure</strong>. 
-          In mathematics and computer science, we give such procedures a special name - <strong>ALGORITHMS</strong>.
+          What you are giving is not just a set of directions. It is a way of describing movement itself.
+          Those instructions form a <strong>procedure</strong>.
+          In mathematics and computer science, we give such procedures a special name.
         </p>
 
-        <p className="italic text-center">
-         An <strong>algorithm</strong> is a sequence of clear instructions that solves a problem step by step.
+        <p className="highlight">
+          An <strong>algorithm</strong> is a sequence of clear instructions that takes you from one state to another, 
+          step by step, without ambiguity.
         </p>
-
       </section>
 
-
-      {/* Maze Thinking Illustration */}
-      <div className="flex justify-center">
+      <div className="image">
         <Image
           src="/images/maze-thinking.png"
           alt="Explorer thinking about maze strategies"
           width={520}
           height={360}
-          className="w-full max-w-md h-auto"
+          className="responsive-image"
         />
       </div>
 
+      <hr className="divider" />
 
-      {/* PLAY SECTION */}
-      <section className="space-y-6">
+      {/* ── Play ──────────────────────────────────────────── */}
+      <section className="play">
+        <h3>Play</h3>
 
-        <h2 className="text-2xl font-semibold">
-          Play
-        </h2>
-
-        <p className="max-w-2xl">
+        <p>
           Guide the character out of the maze.
           Instead of controlling the character directly,
           you will build the instructions that guide its movement.
         </p>
 
+        <iframe
+          src="https://blockly.games/maze?lang=en"
+          className="frame"
+          title="Blockly Maze Game"
+          sandbox="allow-scripts allow-same-origin allow-forms"
+        />
 
-
-        {/* Embedded Maze */}
-        <div className="w-full overflow-hidden rounded-lg border">
-
-          <iframe
-            src="https://blockly.games/maze?lang=en"
-            className="w-full h-[450px] md:h-[600px]"
-          />
-
-        </div>
-
-        <p className="text-sm text-gray-500">
-          Maze powered by Blockly Games.
-        </p>
-
-         {/* Launch Card */}
-        <div className="flex flex-col items-center gap-4 p-6 border rounded-lg bg-gray-50">
-
+        <div className="puzzle-footer">
+          <p className="puzzle-credit">Maze powered by Blockly Games.</p>
           <a
             href="https://blockly.games/maze?lang=en"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-6 py-3 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition"
+            className="puzzle-link"
           >
-            Launch Maze in Full Screen →
+            Launch in full screen →
           </a>
-
-          <p className="text-sm text-gray-500 text-center">
-            Opens the Blockly Maze puzzle in a new tab
-          </p>
-
         </div>
-
       </section>
 
+      <hr className="divider" />
 
+      {/* ── Observe ───────────────────────────────────────── */}
+      <section className="observe">
+        <h3>Observe</h3>
 
+        <p>As you solve the maze, slow down and notice a few things.</p>
 
-      {/* OBSERVE */}
-      <section className="space-y-6 max-w-2xl">
-
-        <h2 className="text-2xl font-semibold">
-          Observe
-        </h2>
-
-        <p>
-          As you solve the maze, slow down and notice a few things.
-        </p>
-
-
-        {/* Grid Illustration */}
-        <div className="flex justify-center">
+        <div className="image">
           <Image
             src="/images/grid-movement.png"
             alt="Movement on a grid diagram"
             width={520}
             height={360}
-            className="w-full max-w-md h-auto"
+            className="responsive-image"
           />
         </div>
 
+        <p className="strong">What does each block actually do?</p>
+        <p>
+          When you drag a <code>moveForward()</code> block,
+          the character moves exactly one square forward.
+          Each step changes the character's position on the grid.
+        </p>
 
-        <div className="space-y-3">
+        <p className="strong">What does "turn left" change?</p>
+        <p>
+          Turning left does not move the character.
+          It changes the direction the character is facing.
+        </p>
 
-          <p className="font-semibold">
-            What does each block actually do?
-          </p>
+        <p>
+          So every step in the maze is doing one of two things: changing position, or changing direction.
+        </p>
 
-          <p>
-            When you drag a <code>moveForward()</code> block,
-            the character moves exactly one square forward.
-          </p>
-
-          <p>
-            Each step changes the character’s position on the grid.
-          </p>
-
-        </div>
-
-
-        <div className="space-y-3">
-
-          <p className="font-semibold">
-            What does "turn left" change?
-          </p>
-
-          <p>
-            Turning left does not move the character.
-          </p>
-
-          <p>
-            It changes the direction the character is facing.
-          </p>
-
-        </div>
-
-
-        <div className="space-y-3">
-
-          <p className="font-semibold">
-            What makes a good solution?
-          </p>
-
-          <ul className="list-disc pl-6 space-y-1">
-            <li>Did you repeat instructions?</li>
-            <li>Did you use more steps than necessary?</li>
-            <li>Could the idea be written more simply?</li>
-          </ul>
-
-        </div>
-
+        <p className="strong">Now look again at the sequence of steps you created.</p>
+        <ul>
+          <li>Did you repeat instructions?</li>
+          <li>Did you use more steps than necessary?</li>
+          <li>Could the idea be written more simply?</li>
+        </ul>
       </section>
 
+      {/* ── Think ─────────────────────────────────────────── */}
+      <section className="think">
+        <h3>Think</h3>
 
+        <p>Every puzzle, no matter how complex, usually hides a simple rule.</p>
+        <p>Look at your solution again.</p>
 
-      {/* THINK */}
-      <section className="space-y-4 bg-yellow-50 p-6 rounded-lg max-w-2xl">
-
-        <h2 className="text-xl font-semibold">
-          Think
-        </h2>
-
-        <p>
-          Every puzzle, no matter how complex,
-          usually hides a simple rule.
-        </p>
-
-        <p>
-          Look at your solution again.
-        </p>
-
-        <ul className="list-disc pl-6 space-y-1">
-          <li>Could you remove any block and still reach the goal?</li>
-          <li>Could repeated instructions become a loop?</li>
-          <li>Could you describe your path as simple grid steps?</li>
+        <ul>
+          <li>1. Could you remove any block and still reach the goal?</li>
+          <li>2. Do repeated steps suggest a pattern that could be written more compactly?</li>
+          <li>3. Can your entire path be described as a single block movement on a grid rather than as individual movements?</li>
         </ul>
 
-        <textarea
-          className="w-full border rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-blue-400"
-          rows={4}
-          placeholder="Write your thoughts..."
-        />
-
+        <textarea placeholder="Write your thoughts here..." rows={4} />
       </section>
 
+      <hr className="divider" />
 
+      {/* ── Section: Insight ──────────────────────────────── */}
+      <section className="section">
+        <h2>Insight</h2>
 
-      {/* INSIGHT */}
-      <section className="space-y-4 max-w-2xl">
-
-        <h2 className="text-2xl font-semibold">
-          Insight
-        </h2>
-
-        <p className="italic text-center">
-          An <strong>algorithm</strong> is not just a list of commands. It is a <strong>structured way of thinking</strong>.
+        <p className="highlight">
+          An <em>algorithm</em> is not just a list of commands.
+          It is a <em>structured way of thinking</em>.
         </p>
 
         <p>
-          The maze puzzle may feel like a small game, but the same idea appears everywhere:<br/>
-          1. navigation systems computing routes<br/>
-          2. search engines finding information<br/>
-          3. AI systems analysing patterns<br/>
+          The maze puzzle may feel like a small game, but something important has happened.
         </p>
 
         <p>
-          All of them ultimately rely on algorithms — carefully defined rules that transform one state into another.
+          Instead of moving through the maze yourself, you described the movement as a sequence of steps. 
+          You turned action into instructions.
+          That shift — from doing something to describing how it is done — is where algorithms begin.
+          The same idea that you observed in the maze puzzle appears in many places.
+        </p>
+
+        <div className="code">{`1. Navigation systems computing routes
+2. Search engines finding information
+3. AI systems analysing patterns`}</div>
+
+        <p>
+          All of them ultimately rely on algorithms —
+          carefully defined rules that transform one state into another.
         </p>
 
         <p>
-          In the next series we will explore what happens when movement is restricted to a grid.
-          Surprisingly, <strong>simple grid movement leads to a beautiful mathematical pattern that appears in combinatorics, probability, and algebra.</strong>
+          In the next series we will look more closely at movement itself.
+          Surprisingly,{" "}
+          <strong>
+            when movement is restricted to a grid, something unexpected begins to appear — a pattern that connects simple steps to deeper ideas in combinatorics and algebra.
+          </strong>
         </p>
-
       </section>
 
-      <div style={{marginTop:40,textAlign:"center"}}>
+      {/* ── Navigation ────────────────────────────────────── */}
+      <div className="next-link">
+        <a href="/series/03" className="next-button">
+          Continue → Series 03: Grid Paths
+        </a>
+      </div>
 
-<a
-href="/series/03"
-style={{
-padding:"10px 18px",
-border:"1px solid #ddd",
-borderRadius:6,
-textDecoration:"none"
-}}
->
-
-Continue → Series 03: Grid Paths
-
-</a>
-
-</div>
-
-
-<div style={{marginTop:40,textAlign:"center"}}>
-
-<a
-href="/series/01"
-style={{
-padding:"10px 18px",
-border:"1px solid #ddd",
-borderRadius:6,
-textDecoration:"none"
-}}
->
-
-Back ← Series 01: The Puzzle of Classification
-
-</a>
-
-</div>
+      <div className="next-link" style={{ marginTop: "16px" }}>
+        <a href="/series/01" className="next-button" style={{ background: "transparent", color: "var(--text-primary)", border: "1px solid var(--border-strong)" }}>
+          ← Back to Series 01: The Puzzle of Classification
+        </a>
+      </div>
 
     </main>
   )

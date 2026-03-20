@@ -300,5 +300,38 @@ textarea:focus {
 }
 .next-button:hover {
   background: var(--accent);
+  border-color: var(--accent);
+  color: #ffffff;
   transform: translateY(-1px);
+}
+
+/* ghost variant — pass via inline style overrides */
+.next-button.ghost {
+  background: transparent;
+  color: var(--text-primary);
+  border: 1px solid var(--border-strong);
+}
+.next-button.ghost:hover {
+  background: var(--bg-subtle);
+  border-color: var(--border-strong);
+  color: var(--text-primary);
+  transform: translateY(-1px);
+}
+
+/* ── observe list shared with think ─────────────────────────────── */
+.think ul, .observe ul { padding-left: 20px; margin: 10px 0; }
+.think ul li, .observe ul li {
+  margin: 10px 0;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+/* ── inline code ─────────────────────────────────────────────────── */
+code {
+  font-family: ui-monospace, 'Courier New', monospace;
+  font-size: 0.875em;
+  background: var(--bg-code);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 1px 6px;
 }
