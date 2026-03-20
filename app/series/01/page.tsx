@@ -1,5 +1,8 @@
 import Image from "next/image"
 
+export const metadata = {
+  title: "Series 01 — The Puzzle of Classification",
+};
 export default function Series01() {
   return (
     <main className="page">
@@ -188,6 +191,8 @@ export default function Series01() {
           className="frame"
           title="Blockly Puzzle Game"
           sandbox="allow-scripts allow-same-origin allow-forms"
+          loading="lazy"
+          tabIndex={-1}
         />
 
         <div className="puzzle-footer">

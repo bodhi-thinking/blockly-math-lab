@@ -1,5 +1,9 @@
 import Image from "next/image"
 
+export const metadata = {
+  title: "Series 02 — From Classification to Motion",
+};
+
 export default function Series02() {
   return (
     <main className="page">

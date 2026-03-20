@@ -3,8 +3,12 @@ import { lora, sourceSans } from '@/app/fonts'
 import '@/app/globals.css'
 
 export const metadata: Metadata = {
-  title: 'Series 01 — The Puzzle of Classification',
-}
+  title: {
+    default: "Blockly Math Lab",
+    template: "%s | Blockly Math Lab",
+  },
+  description: "Learning through math, patterns, and code",
+};
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (

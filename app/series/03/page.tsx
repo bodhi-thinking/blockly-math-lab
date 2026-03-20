@@ -1,227 +1,193 @@
 import Image from "next/image"
 import CombinatoricsLab from "@/app/components/CombinatoricsLab"
 
+export const metadata = {
+  title: "Series 03 — From Manhattan Distance to Pascal's Triangle",
+};
+
 export default function Series03() {
+  return (
+    <main className="page">
 
-return (
+      <span className="series-label">Series 03</span>
 
-<main
-style={{
-maxWidth: 820,
-margin: "auto",
-padding: "40px 20px",
-fontFamily: "Georgia, serif",
-lineHeight: 1.7
-}}
->
+      <h1 className="title">From Manhattan Distance to Pascal's Triangle</h1>
 
-<h1 className="text-3xl sm:text-4xl font-bold">
-        Series 03 — From Manhattan distance to Pascal's Triangle
-</h1>
-
-
-{/* IMAGE 1 */}
-<div style={{margin:"40px 0"}}>
-<Image
-src="/images/euclid-manhattan-dist.png"
-alt="Euclidean vs Manhattan distance"
-width={900}
-height={450}
-style={{width:"100%",height:"auto"}}
-/>
-</div>
-
-<p>
-In the maze puzzle, your character moved one square at a time.<br/>
-Forward. Turn. Forward again.<br/>
-Behind the scenes, every step happened on a grid.
-</p>
-<br/>
-<p>
-  Grids appear everywhere: city streets, spreadsheets, pixels on a screen, even chessboards. <br/>
-  They are one of the simplest ways to organise space.<br/><br/>
-  In ordinary geometry, the shortest path between two points is a straight line. 
-  This idea comes from the geometry developed by Euclid, and it is called <strong>Euclidean distance</strong>.
-  But movement on a grid works differently. <br/><br/>
-  <strong>Imagine walking through a city where the streets form perfect squares. You cannot cut across buildings. 
-  You must follow the streets. </strong>
-  Cities like New York are famous for this layout, 
-  which is why this way of measuring distance is often called<strong> Manhattan distance</strong>.
-</p>
-
-<br/>
-<p>
-Now imagine a slightly different challenge.
-<strong>You are standing at one corner of a square grid. Your goal is to reach the opposite corner.</strong> <br/><br/>
-You can only move <strong>right</strong> or <strong>down</strong>.
-</p>
-
-<p>
-No diagonals. No shortcuts.
-Each move takes you exactly one square.
-Try sketching a small grid on paper.
-Start at the <strong>top-left corner</strong> and move to the <strong>bottom-right corner</strong>.
-</p>
-
-<br/>
-<p>
-Found the shortest path? Great! But how many different paths are there? <br/>
-</p>
-<br/>
-
-<p style={{fontSize:20,fontWeight:600}}>
-How many shortest paths exist?
-</p>
-<br/>
-
-<p>
-If we start counting how many ways we can reach each point on the grid,
-a pattern begins to appear.
-</p>
-
-<br/>
-<p>
-Try it out here and see. Click on the 'START' to begin.
-</p>
-<br/>
-<div className="border rounded-xl p-4 bg-gray-50">
-  <CombinatoricsLab />
-</div>
-
-<br/>
-<br/>
-<p>
-Instead of counting entire paths, focus on a single point in the grid.<br/>
-To reach that point, the path must come from either: <br/>
-
-• the square directly to the left<br/>
-• the square directly below<br/><br/>
-
-There are no other possibilities.
-</p>
-<br/>
-<p>
-So the number of paths to a point is simply the sum of those two numbers.
-</p>
-
-<p>
-That rule may look familiar.
-</p>
-<br/>
-<p>
-It is exactly the rule that generates <b>Pascal’s Triangle</b>.
-Each number in Pascal’s triangle is the sum of the two numbers above it.
-</p>
-<br/>
-<p>
-The same numbers that appears in <strong>binomial expansions</strong> and <strong>probability theory.</strong>
-</p>
-
-<br/>
-
-{/* THINK */}
-      <section className="space-y-4 bg-yellow-50 p-6 rounded-lg max-w-2xl">
-
-        <h2 className="text-xl font-semibold">
-          Think
-        </h2>
+      {/* ── Section 1 ─────────────────────────────────────── */}
+      <section className="section">
+        <div className="image">
+          <Image
+            src="/images/euclid-manhattan-dist.png"
+            alt="Euclidean vs Manhattan distance"
+            width={900}
+            height={450}
+            className="responsive-image"
+          />
+        </div>
 
         <p>
-          Let’s take the 3×3 grid. Every shortest path contains:<br/>
-          3 right moves<br/>
-          3 upward moves<br/>
-          So the path is really just a sequence of six decisions.
+          In the maze puzzle, your character moved one square at a time.
+          <em> Forward. Turn. Forward again. </em>
+          Each instruction changed something, either the position on the grid, or the direction the character was facing.
         </p>
+
         <p>
-          R R R U U U<br/>
-          <strong>In how many ways can we arrange these six moves?</strong>
+          Grids appear everywhere: city streets, spreadsheets, pixels on a screen,
+          even chessboards. They are one of the simplest ways to organise space.
         </p>
 
-        <textarea
-          className="w-full border rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-blue-400"
-          rows={4}
-          placeholder="Write your thoughts..."
-        />
+        <p>
+          In geometry, <em>the shortest path between two points is a straight line. </em>
+          This idea comes from the geometry developed by Euclid, and it is called{" "}
+          <strong>Euclidean distance</strong>. But movement on a grid follows a different logic.
+        </p>
 
+        <p className="highlight">
+          Imagine walking through a city where the streets form perfect squares. 
+          You cannot move diagonally across buildings. You must follow the streets, 
+          turning at intersections and moving block by block. 
+          Cities like New York are built this way, which is why this way of measuring distance 
+          is often called <strong>Manhattan distance</strong>.
+        </p>
       </section>
 
+      <hr className="divider" />
 
-<br/>
-<p>
-Mathematicians write this number as C(6,3).The number of ways to choose 3 objects from a set of 6.
-</p>
-<br/>
+      {/* ── Section 2 ─────────────────────────────────────── */}
+      <section className="section">
+        <h2>How many shortest paths exist?</h2>
 
-<p style={{fontSize:18,fontWeight:600}}>
-To generalize, we write C(n, r)
-</p>
+        <p>
+          Now consider a slightly different question.
+          You are standing at one corner of a square grid.
+          Your goal is to reach the opposite corner.
+        </p>
 
-<p>
-which count the number of ways to choose <i>r objects</i> from <i>n objects</i>.
-</p>
-<br/>
-<p>
-Now return to the grid.
-</p>
+        <p>
+          You can only move <strong>right</strong> or <strong>down</strong>.
+          No diagonals. No shortcuts. Just one square at a time.
+        </p>
 
-<p>
-A shortest path across an <b>n × n</b> grid requires:
-</p>
+        <p>
+          Try sketching a small grid on paper.
+          Start at the <strong>top-left corner</strong> and move to the{" "}
+          <strong>bottom-right corner</strong>.
+        </p>
 
-<p>
-<b>n</b> moves to the right  
-<br/>
-<b>n</b> moves downwards.
-</p>
+        <p className="focus">
+          Found the shortest path? Great! But once you have found one path, a new question naturally appears:
+          but how many such <strong>shortest paths</strong> are there?
+        </p>
 
-<p>
-That means the path contains <b>2n moves in total</b>.
-</p>
+        <p>
+          If we start counting how many ways we can reach each point on the grid,
+          Some paths move right first and then down. 
+          Others alternate between the two. Even in a small grid, the number of possibilities grows faster than expected.
+        </p>
 
-<p>
-The question becomes:
-</p>
+        <p>Try it out below. Click <strong>START</strong> to begin.</p>
 
-<p style={{fontWeight:500}}>
-In how many ways can we choose which <b>n</b> of those moves are rightward? (try it out in the interactive above)
-</p>
-<br/>
-<p>
-The answer is the binomial coefficient:
-</p>
+        <div className="code" style={{ fontFamily: "inherit", background: "var(--bg-subtle)", whiteSpace: "normal", padding: "0" }}>
+          <CombinatoricsLab />
+        </div>
+      </section>
 
-<p style={{fontSize:18,fontWeight:700}}>
-C(2n, n)
-</p>
-<br/>
-<p>
-So the number of shortest paths across an <b>n × n grid</b> is:
-</p>
+      <hr className="divider" />
 
-<p style={{fontSize:18,fontWeight:700}}>
-C(2n, n)
-</p>
+      {/* ── Section 3 ─────────────────────────────────────── */}
+      <section className="section">
+        <p>
+          Instead of counting entire paths, focus on a single point in the grid.
+          To reach that point, the path must come from either:
+        </p>
 
-<div style={{marginTop:40,textAlign:"center"}}>
+        <div className="code">{`• the square directly to the left
+• the square directly above`}</div>
 
-<a
-href="/series/01"
-style={{
-padding:"10px 18px",
-border:"1px solid #ddd",
-borderRadius:6,
-textDecoration:"none"
-}}
->
+        <p>There are no other possibilities.</p>
 
-Back ← Series 01: The Puzzle of Classification
+        <p>
+          So the number of ways to reach that point is simply the sum 
+          of the number of ways to reach those two neighbouring squares to the left and above.
+        </p>
 
-</a>
+        <p className="highlight">
+          That rule may look familiar. It is exactly the rule that generates{" "}
+          <strong>Pascal's Triangle</strong> — where each number is formed by adding the two numbers above it.
+        </p>
 
-</div>
+        <p>
+          The same numbers that appear in <strong>binomial expansions</strong> and{" "}
+          <strong>probability theory</strong>.
+        </p>
 
-</main>
+        <p>
+          What began as a question about movement has quietly turned into a pattern of numbers.
+        </p>
+      </section>
 
-)
+      {/* ── Think ─────────────────────────────────────────── */}
+      <section className="think">
+        <h3>Think</h3>
 
+        <p>
+          Let’s return to a simple case.In a 3 × 3 grid, every shortest path consists of three moves to the right and three moves downward. 
+          So each path can be seen as a sequence of six steps, where each step is either a right move or a downward move.
+        </p>
+
+        <div className="code">R R R D D D</div>
+
+        <p className="strong">In how many ways can we arrange these six moves?</p>
+
+        <textarea placeholder="Write your thoughts here..." rows={4} />
+      </section>
+
+      <hr className="divider" />
+
+      {/* ── Section 4 ─────────────────────────────────────── */}
+      <section className="section">
+        <h2>Insight</h2>
+        <p>
+          This question is the same as asking: in how many ways can we choose which three of the six steps are rightward moves?
+          Mathematicians write this as <strong>C(6, 3)</strong> —
+          the number of ways to choose 3 objects from a set of 6.
+        </p>
+
+        <p className="strong" style={{ marginTop: "22px" }}>To generalise, we write C(n, r)</p>
+
+        <p>which counts the number of ways to choose <em>r</em> objects from <em>n</em> objects.</p>
+
+        <p>Now return to the grid. A shortest path across an <strong>n × n</strong> grid requires:</p>
+
+        <div className="code">{`n moves to the right
+n moves downward
+─────────────────
+2n moves in total`}</div>
+
+        <p>So the question becomes:</p>
+
+        <p className="highlight">
+          If you have 2n moves to make,and exactly n of them must be “right” moves, in how many different ways can you arrange them? 
+        </p>
+
+        <p>The answer is the binomial coefficient:</p>
+
+        <div className="code center" style={{ fontSize: "1.4rem", letterSpacing: "0.04em" }}>C(2n, n)</div>
+
+        <p>
+          So the number of shortest paths across an n×n grid is not just a count of routes. 
+          It is a combinatorial structure, connected to Pascal’s Triangle, to binomial coefficients, 
+          and to deeper patterns that appear across mathematics.
+        </p>
+      </section>
+
+      {/* ── Navigation ────────────────────────────────────── */}
+      <div className="next-link" style={{ marginTop: "16px" }}>
+        <a href="/series/02" className="next-button" style={{ background: "transparent", color: "var(--text-primary)", border: "1px solid var(--border-strong)" }}>
+          ← Back to Series 02: From Classification to Motion
+        </a>
+      </div>
+
+    </main>
+  )
 }
