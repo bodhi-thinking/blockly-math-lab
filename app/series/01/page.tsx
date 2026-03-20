@@ -2,343 +2,224 @@ import Image from "next/image"
 
 export default function Series01() {
   return (
-    <main className="max-w-3xl mx-auto px-6 py-12 space-y-10">
+    <main className="page">
 
-      {/* Title */}
-      <h1 className="text-4xl font-bold">
-        Series 01 — The Puzzle of Classification
-      </h1>
+      <span className="series-label">Series 01</span>
 
-      {/* Quote */}
-      <blockquote className="border-l-4 pl-4 italic text-gray-600">
-        “Je le vois, mais je ne le crois pas.” <br/>
-        I see it, but I do not believe it. <br/>
+      <h1 className="title">The Puzzle of Classification</h1>
+
+      <blockquote className="quote">
+        "Je le vois, mais je ne le crois pas."<br />
+        I see it, but I do not believe it.<br />
         — Georg Cantor
       </blockquote>
 
-      {/* Curiosity Opening */}
-      <section className="space-y-4">
+      {/* ── Section 1 ─────────────────────────────────────── */}
+      <section className="section">
+        <h2>Can you count to infinity?</h2>
 
-        <h2 className="text-2xl font-semibold">
-          Can you count to infinity?
-        </h2>
+        <p>Let's begin with something simple.</p>
+        <p>Try counting.</p>
+
+        <div className="code">1 &nbsp; 2 &nbsp; 3 &nbsp; 4 &nbsp; 5 &nbsp; ...</div>
 
         <p>
-          Counting feels like one of the simplest things we ever learn.
-          Each number naturally leads to the next. Nothing mysterious about it. If you keep going, the numbers never stop.
+          You don't really think about it. The next number just appears,
+          and you can keep going for as long as you like.
         </p>
 
-        <p>You could do this forever.</p>
+        <p>Now change the game.</p>
+        <p>Instead of whole numbers, think of a number between 0 and 1.</p>
 
-        <div className="bg-gray-100 p-4 rounded font-mono">
-          1 &nbsp; 2 &nbsp; 3 &nbsp; 4 &nbsp; 5 &nbsp; ...
-        </div>
+        <div className="code">0.5 &nbsp;&nbsp; 0.318 &nbsp;&nbsp; 0.777777...</div>
 
-        <p>
-          Infinity simply means that the process of counting has no end.
-          Now try a slightly different experiment.
-          Instead of whole numbers, write down a number <strong>between 0 and 1. </strong>
-        </p>
+        <p>That still feels easy.</p>
 
-        <div className="bg-gray-100 p-4 rounded font-mono">
-          0.5 &nbsp; 0.318 &nbsp; 0.777777...
-        </div>
-
+        <p className="focus">But now try to list all of them.</p>
 
         <p>
-          But now imagine trying to <strong>list all of them</strong>.
+          With counting numbers, you start at 1. But with decimals between 0 and 1?
         </p>
 
         <p>
-          Where would you even begin?
-        </p>
-
-        <p>
-          With counting numbers, you start at 1.
-          But with decimals between 0 and 1?
-        </p>
-
-        <p>
-          Is the first one 0.1?  <br/>
-          But then what about 0.01? <br/>
+          Is the first one 0.1?<br />
+          But then what about 0.01?<br />
           Or 0.001?
         </p>
 
         <p>
-          Every time you think you found the smallest one, you can always place another number before it.
+          Every time you think you've found the smallest one,
+          something slips in before it.
         </p>
 
-        <p>
-          Something strange begins to happen.
-          The idea of listing all these numbers starts to feel impossible.
+        <p className="highlight">
+          What felt endless now begins to feel impossible.
         </p>
-
       </section>
 
-      {/* Cantor Story */}
-      <section className="space-y-4">
+      <hr className="divider" />
 
+      {/* ── Section 2 ─────────────────────────────────────── */}
+      <section className="section">
         <p>
-          <strong>In the late 1800s, Georg Cantor investigated exactly this question.</strong> What he discovered surprised even him.
+          In the late 1800s, Georg Cantor explored this question deeply.
+          What he discovered surprised even him.
         </p>
 
-        <p>
-          <strong>The infinity of counting numbers and the infinity of decimal numbers are not the same size. </strong> <br/>
-        </p>
+        <p className="highlight">Not all infinities are the same size.</p>
 
-
-         {/* Image */}
-      <div className="flex justify-center">
-        <Image
-          src="/images/cantor-thinking.png"
-          alt="Scientist thinking about numbers"
-          width={520}
-          height={360}
-        />
-      </div>
-
+        <div className="image">
+          <Image
+            src="/images/cantor-thinking.png"
+            alt="Georg Cantor deep in thought"
+            width={520}
+            height={360}
+            className="responsive-image"
+          />
+        </div>
       </section>
 
-      {/* Infinity Comparison */}
-      <section className="space-y-4">
+      {/* ── Section 3 ─────────────────────────────────────── */}
+      <section className="section">
+        <p>Cantor gave each infinity a name.</p>
 
+        <div className="math-row">
+          <div>
+            <div className="math-symbol center">ℵ₀</div>
+            <div className="math-label">counting numbers</div>
+          </div>
+          <div>
+            <div className="math-symbol center" style={{ color: "var(--accent)" }}>&lt;</div>
+          </div>
+          <div>
+            <div className="math-symbol center">𝔠</div>
+            <div className="math-label">decimals between 0 and 1</div>
+          </div>
+        </div>
 
+        <p className="subtle center">Both are infinite. But one is strictly larger.</p>
+      </section>
+
+      <hr className="divider" />
+
+      {/* ── Think ─────────────────────────────────────────── */}
+      <section className="think">
+        <h3>Think</h3>
+        <p>Imagine someone gives you an infinitely long list of decimal numbers.</p>
+        <p>Can you construct a number that will never appear in that list?</p>
+        <textarea placeholder="Write your idea here..." rows={4} />
+      </section>
+
+      {/* ── Section 4 ─────────────────────────────────────── */}
+      <section className="section">
         <p>
-          Mathematicians use special symbols to describe this idea. <br/>
-          The infinity of counting numbers:
+          Cantor approached this differently. Instead of trying to understand
+          the list as a whole, he looked at how each number could be slightly changed.
         </p>
 
-        <div className="bg-gray-100 p-4 rounded font-mono text-center">
-          ℵ₀
+        <p>
+          By altering just one digit in each position, he could always construct
+          a number that would not appear anywhere in the list.
+        </p>
+
+        <p>No matter how long the list is, something is always missing.</p>
+
+        <p className="highlight">
+          The question was not about numbers alone. It was about collections.
+        </p>
+
+        <div className="code">1, 2, 3, 4, ...</div>
+        <div className="code">0.13729...&nbsp;&nbsp; 0.50013...&nbsp;&nbsp; 0.33333...</div>
+
+        <p className="strong" style={{ marginTop: "22px" }}>Can we match them?</p>
+
+        <div className="code">
+          {`1 → 0.13729...
+2 → 0.50013...
+3 → 0.33333...`}
         </div>
 
         <p>
-          And the infinity of decimal numbers between 0 and 1:
+          If every element in one collection can be paired with exactly one
+          in another, the collections are the same size. If not, one must be larger.
         </p>
 
-        <div className="bg-gray-100 p-4 rounded font-mono text-center">
-          𝔠
-        </div>
-
-        <p className="text-center text-lg font-semibold">
-          ℵ₀ &nbsp; &lt; &nbsp; 𝔠
+        <p className="highlight">
+          Mathematicians call such collections <em>sets</em>.
         </p>
 
-        <p className="text-center text-gray-600">
-          Both collections are infinite.
-          But one of them is larger.
-          It sounds almost absurd at first. How can infinity be bigger than infinity?
-          Yet Cantor showed that this is unavoidable.
-        </p>
-
+        <p className="subtle">A set is a collection defined by a clear rule.</p>
       </section>
 
-      {/* Think */}
-      <section className="space-y-4 bg-yellow-50 p-6 rounded">
+      <hr className="divider" />
 
-        <h2 className="text-xl font-semibold">
-          Think
-        </h2>
+      {/* ── Section 5 ─────────────────────────────────────── */}
+      <section className="section">
+        <p>You already use this idea naturally.</p>
 
-        <p>
-          Imagine someone gives you an infinitely long list of decimal numbers.
-        </p>
-
-        <p>
-          Can you create a decimal number that is guaranteed not to appear anywhere on that list?
-        </p>
-
-        <textarea
-          className="w-full border rounded p-3"
-          rows={4}
-          placeholder="Write your idea here..."
-        />
-
-      </section>
-
-      {/* Collections */}
-      <section className="space-y-4">
-
-        <p>
-          <br/>
-          ......<br/>
-          .....<br/>
-          ....<br/>
-          ...<br/>
-          ..<br/>
-          .<br/>
-         <br/>
-
-          Cantor had a clever trick. <br/>
-          Look at the <strong>first digit of the first number.</strong> <br/>
-          Look at the <strong>second digit of the second number.</strong> <br/>
-          Look at the <strong>third digit of the third number.</strong> <br/>
-          
-          Now <strong>change each of those digits slightly.</strong>
-          The new number you create will differ from every number in the list in at least one position.
-          So it cannot appear anywhere in the list.
-        </p>
-
-        <p>
-          No matter how long the list is, you can always construct a new number missing from it.
-          Which means the decimals can never be fully listed.
-          That single argument changed how mathematicians think about infinity.
-        </p>
-
-
-        <p>
-          What Cantor eventually realised was that the question wasn’t really about a single number.
-          It was about two collections of numbers.
-        </p>
-
-        <div className="bg-gray-100 p-4 rounded font-mono">
-          1, 2, 3, 4, ...
-        </div>
-
-        <div className="bg-gray-100 p-4 rounded font-mono">
-          0.13729... &nbsp; 0.50013... &nbsp; 0.33333...
+        <div className="image">
+          <Image
+            src="/images/collection-set.png"
+            alt="Animals sorted by shared features"
+            width={520}
+            height={360}
+            className="responsive-image"
+          />
         </div>
 
         <p>
-          Instead of asking “Can we list them?”, Cantor asked a different question.
-          Can we pair the numbers from these two collections?
-          Imagine matching them one by one
+          When you see a duck and a bee, you begin sorting —
+          not randomly, but based on something you notice.
         </p>
 
-         <div className="bg-gray-100 p-4 rounded font-mono">
-          1 → 0.13729...<br/>
-          2 → 0.50013...<br/>
-          3 → 0.33333...<br/>
-          4 → 0.92104...<br/>
-        </div>
+        <p>Wings. Legs. Structure.</p>
 
-        <p>
-          If every number in the first collection could be paired with exactly one number in the second, 
-          and none were left over, then the two collections would be the same size.
-        </p>
+        <p className="highlight">That is classification.</p>
 
-        <p>
-          Mathematicians use a special word for any collection of objects like this.
-          They call it a <strong>set</strong>. <br/>
-          <strong> A set is simply a collection defined by a clear rule.</strong>
-        </p>
-
-        <p>
-          The set of counting numbers.<br/>
-          The set of decimal numbers between 0 and 1.<br/>
-          The set of all prime numbers.<br/>
-        </p>
-
-        <p>
-          This idea of deciding membership may feel abstract, but you already use it constantly in everyday life.
-        </p>
-
+        <p className="strong">Does this belong — or doesn't it?</p>
       </section>
 
-      {/* Animal Sets Image */}
-
-
-      {/* Classification */}
-      <section className="space-y-4">
-
-        <p>
-          You already use this kind of thinking naturally.
-        </p>
-
-        <p>
-          When you see a duck and a bee,
-          you immediately start sorting.
-          Wings.  
-          Legs.  
-          Traits.<br/>
-          You're applying a rule
-          to decide which group something belongs to.
-        </p>
-
-        <p>
-          That's <strong>classification</strong>.
-        </p>
-
-        <p>
-          And classification is exactly what a set is:
-        </p>
-
-        <p className="italic text-gray-700 text-center">
-          A collection defined by a rule so clear that
-          for any object you can answer one question:
-        </p>
-
-        <p className="text-center font-semibold">
-          Does this belong — or doesn't it?
-        </p>
-
-      </section>
-
-      {/* Puzzle */}
-      <section>
-
-        <h2 className="text-xl font-semibold mb-4">
-          Play
-        </h2>
-
-        <p className="mb-3 text-sm text-gray-600">
-          Before Cantor classified infinite collections of numbers,
-          try classifying animals.
-        </p>
+      {/* ── Play ──────────────────────────────────────────── */}
+      <section className="play">
+        <h3>Play</h3>
 
         <iframe
           src="https://blockly.games/puzzle?lang=en"
-          width="100%"
-          height="600"
-          className="border rounded"
-          loading="lazy"
+          className="frame"
+          title="Blockly Puzzle Game"
+          sandbox="allow-scripts allow-same-origin allow-forms"
         />
 
-        <p className="text-sm text-gray-500 mt-2">
-          Puzzle powered by Blockly Games.
-        </p>
-
+        <div className="puzzle-footer">
+          <p className="puzzle-credit">Puzzle powered by Blockly Games.</p>
+          <a
+            href="https://blockly.games/puzzle?lang=en"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="puzzle-link"
+          >
+            Launch in full screen →
+          </a>
+        </div>
       </section>
 
-      {/* Observe */}
-      <section className="space-y-3">
-
-        <h2 className="text-xl font-semibold">
-          Observe
-        </h2>
-
-        <ul className="list-disc pl-6">
+      {/* ── Observe ───────────────────────────────────────── */}
+      <section className="observe">
+        <h3>Observe</h3>
+        <ul>
           <li>What rule decides where each animal goes?</li>
-          <li>Could an animal belong to more than one group?</li>
-          <li>What happens if you choose the wrong trait?</li>
+          <li>Could something belong to more than one group?</li>
+          <li>What happens when the rule changes?</li>
         </ul>
-
-        <textarea
-          className="w-full border rounded p-3"
-          rows={4}
-          placeholder="Write your observations..."
-        />
-
+        <textarea placeholder="Write your observations here..." rows={4} />
       </section>
 
-
-      <div style={{marginTop:40,textAlign:"center"}}>
-
-<a
-href="/series/02"
-style={{
-padding:"10px 18px",
-border:"1px solid #ddd",
-borderRadius:6,
-textDecoration:"none"
-}}
->
-
-Continue → Series 02: From Classification to Motion
-
-</a>
-
-</div>
+      {/* ── Next ──────────────────────────────────────────── */}
+      <div className="next-link">
+        <a href="/series/02" className="next-button">
+          Continue → Series 02: From Classification to Motion
+        </a>
+      </div>
 
     </main>
   )
