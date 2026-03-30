@@ -34,6 +34,14 @@ export default function Home() {
         Start Series 03 —   A Pattern Appears
       </a>
 
+    <br/>
+      <a
+        href="/series/04"
+        className="text-blue-600 underline"
+      >
+        Start Series 04 —   From Direction to Motion
+      </a>
+
     </main>
   );
 }

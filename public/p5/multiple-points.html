@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Multiple Points</title>
+
+  <!-- p5.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+
+  <style>
+    body {
+      margin: 0;
+      background: black;
+      overflow: hidden;
+    }
+  </style>
+</head>
+
+<body>
+
+<script>
+
+let r = 150;
+let axisNum = 6;
+
+let axisDirection = [];
+let x = [];
+let y = [];
+let speed = 10;
+let color = [];
+
+function setup(){
+  
+  createCanvas(600, 600);
+  angleMode(DEGREES);
+  
+  for(let i = 0; i <= axisNum; i++){
+    axisDirection[i] = i * 90 / axisNum;
+    color[i] = random(256);
+  }
+
+}
+
+function draw(){
+  background(0);
+  translate(width/2 , height/2);
+  noFill();
+  colorMode(HSB);
+  
+  // bounding circle
+  stroke(50);
+  circle(0, 0, 2*r);
+  
+  // positioning the dots
+  for(let i = 0; i < axisNum; i++){
+    
+    x[i] = r * cos(speed + axisDirection[i]);
+    y[i] = r * sin(speed + axisDirection[i]);
+  
+    push();
+    
+    fill(color[i], 200, 200);
+    stroke(color[i], 200, 200);
+    
+    rotate(-axisDirection[i]);
+    
+    circle(x[i], 0, 20);
+    circle(0, y[i], 20);
+    
+    // axes
+    line(-r, 0, r, 0);
+    line(0, -r, 0, r);
+    
+    pop();
+    
+    // IMPORTANT: keep exactly as your logic
+    speed += 0.2;
+  }
+  
+}
+
+</script>
+
+</body>
+</html>
